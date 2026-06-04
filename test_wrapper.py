@@ -27,8 +27,7 @@ def remove_stopwords_by_list(doc: Document, stopwords: set[str]):
         stopwords: The stop words to remove
     """
 
-    # The following code is an example. You may replace it how you see fit:
-    from my_module import remove_stop_words
+    from ir_module import remove_stop_words
     doc._filtered_terms = remove_stop_words(doc.terms, stopwords)
 
 
@@ -49,11 +48,7 @@ def remove_stopwords_by_frequency(doc, collection: list[Document], common_freque
         rare_frequency: The frequency at which a term is "too rare" to help finding a document.
     """
 
-    # The following code is an example. You may replace it how you see fit:
-    # from my_module import remove_stopwords
-    # remove_stopwords_by_frequency(doc, collection, common_frequency, rare_frequency)
-
-    from my_module import remove_stop_words_by_frequency
+    from ir_module import remove_stop_words_by_frequency
     doc._filtered_terms = remove_stop_words_by_frequency(doc.terms, collection, low_freq=rare_frequency, high_freq=common_frequency)
 
 
@@ -81,8 +76,7 @@ def load_documents_from_url(url: str, author: str, origin: str, start_line: int,
         list[Document]: List of parsed documents
     """
 
-    # The following code is an example. You may replace it how you see fit:
-    from my_module import load_collection_from_url
+    from ir_module import load_collection_from_url
     return load_collection_from_url(url, search_pattern, start_line, end_line, author, origin)
 
 
@@ -100,6 +94,5 @@ def linear_boolean_search(term, collection, stopword_filtered=False):
         stopword_filtered: If true, stopwords are not considered in the search
     """
 
-    # The following code is an example. You may replace it how you see fit:
-    from my_module import linear_boolean_search
+    from ir_module import linear_boolean_search
     return linear_boolean_search(term, collection, stopword_filtered)
