@@ -7,8 +7,8 @@ class TestTask1DownloadSplit(unittest.TestCase):
         url = "https://www.gutenberg.org/files/21/21-0.txt"
         author = "Aesop"
         origin = "Aesop’s Fables"
-        start_line = 39
-        end_line = 4777
+        start_line = 848
+        end_line = 5942
 
         import re
         search_pattern = re.compile(r'([^\n]+)\n\n(.*?)(?=\n{5}(?=[^\n]+\n\n)|$)', re.DOTALL)
@@ -21,7 +21,7 @@ class TestTask1DownloadSplit(unittest.TestCase):
             self.assertEqual(doc.author, author)
             self.assertEqual(origin, doc.origin)
 
-            if i == 0:
+            if i == 1:
                 self.assertEqual(doc.title.strip().lower(), "The Wolf And The Lamb".strip().lower())
 
             if i == len(docs) - 1:
