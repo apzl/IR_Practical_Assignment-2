@@ -124,8 +124,7 @@ def remove_stop_words_by_frequency(terms, collection, low_freq=0.1, high_freq=0.
 
     # Identify stop words that fall outside the acceptable frequency band
     stop_words = {
-        term for term, freq in doc_freq.items()
-        if (freq / n) >= high_freq or (freq / n) <= low_freq
-    }
+    term for term, freq in doc_freq.items()
+    if (freq / n) >= high_freq or freq == 1}
 
     return [t for t in terms if t.lower() not in stop_words]
